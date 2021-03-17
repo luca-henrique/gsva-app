@@ -1,18 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
-import Logo from '../../assets/images/logo-nome-baixo.png';
+import Logo from '../../assets/images/logo-sem-nome.png';
 
 const Home = ({navigation}) => {
-  const countdown = () => {
-    var timer = setTimeout(function () {
-      navigation.push('Login');
-    }, 3000);
-  };
-
   return (
     <View style={styles.container}>
-      {countdown()}
       <Image source={Logo} />
     </View>
   );
@@ -25,6 +18,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     backgroundColor: '#fff',
+  },
+  logo: {
+    width: '50%',
+    height: '50%',
   },
 });
 

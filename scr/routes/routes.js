@@ -1,19 +1,23 @@
 import React from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
-import Home from '../pages/home';
-import Search from '../pages/search';
+import Home from '../pages/Home';
+import Login from '../pages/Login';
 
-const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Search" component={Search} />
-      </Drawer.Navigator>
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Login" component={Login} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
