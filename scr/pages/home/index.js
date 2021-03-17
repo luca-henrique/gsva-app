@@ -7,7 +7,7 @@ const Home = ({navigation}) => {
   const countdown = () => {
     var timer = setTimeout(function () {
       navigation.push('Login');
-    }, 3000);
+    }, 5000);
   };
 
   return (
