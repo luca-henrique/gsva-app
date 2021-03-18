@@ -8,12 +8,16 @@ import {
   TextInput,
 } from 'react-native';
 
-import Logo from '../../assets/images/logo-sem-nome.png';
+import Logo from '../../assets/images/logo.png';
 
 const Home = ({navigation}) => {
+  const logIn = () => {
+    navigation.push('CreateAccount');
+  };
+
   return (
     <View style={styles.container}>
-      <Image source={Logo} />
+      <Image source={Logo} style={styles.logo} />
 
       <View style={{width: '90%'}}>
         <View style={styles.containerInput}>
@@ -23,19 +27,20 @@ const Home = ({navigation}) => {
 
         <View style={styles.containerInput}>
           <Text style={styles.label}>Senha</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Insira sua senha"
-            keyboardType="numeric"
-          />
+          <TextInput style={styles.input} placeholder="Insira sua senha" />
+        </View>
+        <View style={styles.containerRecovery}>
+          <TouchableOpacity onPress={() => navigation.push('RecoveryAccount')}>
+            <Text style={styles.recoveryAccountLabel}>Recuperar Conta</Text>
+          </TouchableOpacity>
         </View>
       </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={() => logIn()}>
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.push('CreateAccount')}>
         <Text style={styles.buttonTextSecondary}>Cria Conta</Text>
       </TouchableOpacity>
     </View>
@@ -51,44 +56,61 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 
+  logo: {
+    width: 240,
+    height: 130,
+  },
+
   button: {
-    backgroundColor: '#66C4D9',
+    backgroundColor: '#418FBF',
     width: '90%',
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    marginBottom: 25,
+    marginTop: 30,
   },
   buttonText: {
     color: '#fff',
     fontSize: 20,
-    fontWeight: 'bold',
   },
 
   buttonTextSecondary: {
-    color: '#66C4D9',
+    marginTop: 30,
+    color: '#418FBF',
     fontSize: 16,
-    fontWeight: 'bold',
   },
 
   containerInput: {
     width: '100%',
-    marginTop: 10,
-    marginBottom: 30,
+    marginTop: 30,
   },
 
   input: {
     height: 45,
-    borderBottomWidth: 1,
+    borderWidth: 1,
     borderColor: '#BDBDBD',
     width: '100%',
+    borderRadius: 20,
+    paddingLeft: 20,
   },
 
   label: {
+    color: '#6E6E6E',
+    fontSize: 14,
+
+    marginBottom: 10,
+  },
+
+  recoveryAccountLabel: {
     color: '#91C9A6',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 14,
+  },
+
+  containerRecovery: {
+    alignItems: 'flex-end',
+    width: '100%',
   },
 });
 
