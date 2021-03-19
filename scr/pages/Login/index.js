@@ -10,7 +10,9 @@ import {
 
 import Logo from '../../assets/images/logo.png';
 
-const Home = ({navigation}) => {
+import TextButton from '../../components/TextButton';
+
+const Home = ({ navigation }) => {
   const logIn = () => {
     navigation.push('CreateAccount');
   };
@@ -19,7 +21,7 @@ const Home = ({navigation}) => {
     <View style={styles.container}>
       <Image source={Logo} style={styles.logo} />
 
-      <View style={{width: '90%'}}>
+      <View style={{ width: '90%' }}>
         <View style={styles.containerInput}>
           <Text style={styles.label}>E-mail</Text>
           <TextInput style={styles.input} placeholder="Insira seu e-mail" />
@@ -40,9 +42,10 @@ const Home = ({navigation}) => {
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => navigation.push('CreateAccount')}>
-        <Text style={styles.buttonTextSecondary}>Cria Conta</Text>
-      </TouchableOpacity>
+      <TextButton
+        text="Cria Conta"
+        onPress={() => navigation.push('CreateAccount')}
+      />
     </View>
   );
 };
