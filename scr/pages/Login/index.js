@@ -14,7 +14,7 @@ import TextButton from '../../components/TextButton';
 
 const Home = ({ navigation }) => {
   const logIn = () => {
-    navigation.push('CreateAccount');
+    navigation.push('Map');
   };
 
   return (

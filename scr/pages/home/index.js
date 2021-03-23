@@ -1,13 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 import Logo from '../../assets/images/logo-nome-baixo.png';
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   const countdown = () => {
     var timer = setTimeout(function () {
       navigation.push('Login');
-    }, 5000);
+    }, 3000);
   };
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
 import Home from '../pages/Home';
 import Login from '../pages/Login';
@@ -12,6 +12,8 @@ import InformationUser from '../pages/CreateAccount/step2';
 import RecoveryAccount from '../pages/RecoveryPassword/step0';
 import ConfirmationCodeRecoveryPassword from '../pages/RecoveryPassword/step1';
 import ChangerPassword from '../pages/RecoveryPassword/step2';
+
+import Map from '../pages/Map/index';
 
 const Stack = createStackNavigator();
 
@@ -39,6 +41,8 @@ const Routes = () => {
           component={ConfirmationCodeRecoveryPassword}
         />
         <Stack.Screen name="ChangerPassword" component={ChangerPassword} />
+
+        <Stack.Screen name="Map" component={Map} />
       </Stack.Navigator>
     </NavigationContainer>
   );
